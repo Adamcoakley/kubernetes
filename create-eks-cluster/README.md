@@ -29,6 +29,6 @@ eksctl create cluster \
 You should now see something like this, which means you have successfully deployed an EKS Cluster:
 
 <p align="center">
-    <img src="https://github.com/Adamcoakley/LibrarySystem/blob/main/readme-images/eks-cluster.png?raw=true">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/create-eks-cluster/eks-cluster.png?raw=true">
 </p>
 
