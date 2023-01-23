@@ -1,7 +1,7 @@
-# Creating an Elastic Kubernetes Service (EKS) 
+# Elastic Kubernetes Service (EKS) 
 EKS is a managed Kubernetes service that makes it easy for you to run Kubernetes on AWS. This service in AWS can be used to create, configure and manage a Kubernetes Cluster.
 
-## Tutorial 
+# Tutorial 
 In this tutorial, we will create an EKS Cluster and attach a nodegroup.
 
 ## Prerequisites 
