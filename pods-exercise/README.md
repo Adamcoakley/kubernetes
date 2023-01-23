@@ -23,7 +23,7 @@ spec:
       value: "demo_db"
 ```
 
-In future tutorials, we will be learning about secrets, but for now, the env variables and their values are visible. 
+We will be learning about secrets in future tutorials, but for now, the env variables and their values are visible. 
 
 ## Commands
 I created a pod by referencing the mysql.yaml file: 
