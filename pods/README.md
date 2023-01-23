@@ -34,3 +34,27 @@ I created a pod by referencing this file:
 ```
 kubectl apply -f nginx.yaml
 ```
+
+<p align="center">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/pods/apply-command.png?raw=true">
+</p>
+
+List the Pods running the in cluster: 
+```
+kubectl get pods
+```
+
+<p align="center">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/pods/get-command.png?raw=true">
+</p>
+
+The exec command can be used to access the NGINX container running in the Pod: 
+```
+kubectl exec -it nginx -- sh
+```
+
+Try running some commands to see information about the container, such as its hostname:
+
+<p align="center">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/pods/exec-command.png?raw=true">
+</p>
