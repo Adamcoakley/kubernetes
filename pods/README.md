@@ -1,8 +1,5 @@
 # Pods 
-Pods are simply the smallest unit of execution in Kubernetes, consisting of one or more containers, typically one. We only use one container per pod in order to reduce coupling.
-
-# Tutorial 
-This tutorial shows you how to create a Pod from a manifest and run some basic kubectl commands.
+Pods are simply the smallest unit of execution in Kubernetes, consisting of one or more containers, typically one. We only use one container per pod in order to reduce coupling. This tutorial shows you how to create a Pod from a manifest and run some basic kubectl commands.
 
 ## Prerequisites 
 This module assumes you have created a Kubernetes cluster, have kubectl installed and have configured it to connect to your cluster.
