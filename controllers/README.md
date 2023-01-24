@@ -37,7 +37,7 @@ metadata:
   labels:
     app: backend
 spec:
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: backend
@@ -89,7 +89,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: frontend
@@ -135,9 +135,8 @@ Once you have the IP address, copy it into your browser and access the applicati
 </p>
 
 ## Rolling Update
-We're going to make two changes to our two-service application:
+We're going to make a changes to our two-service application:
 * We're going to change the background colour to blue.
-* We're going to change the generated information to show numbers instead of letters.
 
 I made a change to the manifest, so the frontend.yaml file looks as follows:
 ```
@@ -161,7 +160,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: frontend
