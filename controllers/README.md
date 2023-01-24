@@ -124,6 +124,10 @@ To find the external IP address of the LoadBalancer Service associated with the 
 kubectl get services
 ```
 
+<p align="center">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/controllers/get-services.png?raw=true">
+</p>
+
 Once you have the IP address, copy it into your browser and access the application on port 5000. You should see a page that looks like this:
 
 <p align="center">
@@ -131,3 +135,60 @@ Once you have the IP address, copy it into your browser and access the applicati
 </p>
 
 ## Rolling Update
+We're going to make two changes to our two-service application:
+* We're going to change the background colour to blue.
+* We're going to change the generated information to show numbers instead of letters.
+
+I made a change to the manifest, so the frontend.yaml file looks as follows:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  type: LoadBalancer
+  selector:
+    app: frontend
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: htrvolker/python-frontend:blue # this image will show a blue background instead of red
+        ports:
+        - containerPort: 5000
+```
+
+Now, we can re-apply the manifest:
+```
+kubectl apply -f frontend.yaml
+```
+
+<p align="center">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/controllers/apply-frontend.png?raw=true">
+</p>
+
+The only change we've made is to the container's image. The new version of the application will show a blue background rather than the red, like so:
+
