@@ -131,7 +131,7 @@ kubectl get services
 Once you have the IP address, copy it into your browser and access the application on port 5000. You should see a page that looks like this:
 
 <p align="center">
-    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/controllers/browser.png?raw=true">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/controllers/red-browser.png?raw=true">
 </p>
 
 ## Rolling Update
@@ -191,4 +191,8 @@ kubectl apply -f frontend.yaml
 </p>
 
 The only change we've made is to the container's image. The new version of the application will show a blue background rather than the red, like so:
+
+<p align="center">
+    <img src="https://github.com/Adamcoakley/kubernetes/blob/main/controllers/blue-browser.png?raw=true">
+</p>
 
